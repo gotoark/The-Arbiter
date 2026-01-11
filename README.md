@@ -26,6 +26,9 @@ https://the-arbiter.vercel.app/
 
 ### Table View Results
 ![Table View Results](./screenshots/tableView.png)
+
+![Table View Results](./screenshots/tableView.png)
+
 *Structured table view for analytical comparison*
 
 ### Chart Visualizations
