@@ -6,6 +6,45 @@ The Arbiter is a cyberpunk-themed web application that provides unbiased, AI-pow
 
 ![The Arbiter Interface](https://img.shields.io/badge/Status-Active-brightgreen) ![Next.js](https://img.shields.io/badge/Next.js-14.0-black) ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue) ![Groq AI](https://img.shields.io/badge/Groq-AI%20Powered-orange)
 
+
+## Live Demo :
+https://the-arbiter.vercel.app/
+
+
+
+
+## 📸 Screenshots
+
+### Main Interface
+![The Arbiter Main Interface](./screenshots/appDashBoard.png)
+*The cyberpunk-themed main interface with animated space background*
+
+
+### Card View Results
+![Card View Results](./screenshots/cardView.png)
+*Detailed comparison results in immersive card format*
+
+### Table View Results
+![Table View Results](./screenshots/tableView.png)
+*Structured table view for analytical comparison*
+
+### Chart Visualizations
+![Chart View Results](./screenshots/chartView.png)
+*Interactive radar charts, bar graphs, and score visualizations*
+
+
+### Share & Export Features
+![Share and Export](./screenshots/socialShare.png)
+*Social sharing and image export capabilities*
+
+### Mobile Responsive Design
+<div align="center">
+  <img src="./screenshots/mobileDashboard.png" alt="Mobile Form" width="300"/>
+  <img src="./screenshots/mobileResults.png" alt="Mobile Results" width="300"/>
+</div>
+
+*Fully responsive design optimized for mobile devices*
+
 ## 🎯 Features
 
 ### Core Functionality
@@ -25,6 +64,29 @@ The Arbiter is a cyberpunk-themed web application that provides unbiased, AI-pow
 - **Social Sharing**: Share to Twitter, LinkedIn with auto-generated images
 - **Copy to Clipboard**: Formatted text summaries for easy sharing
 - **Native Sharing**: Mobile-optimized sharing with image attachment
+
+## 🖼️ Feature Showcase
+
+### Three Distinct View Modes
+<table>
+  <tr>
+    <td align="center">
+      <img src="./screenshots/cardView.png" alt="Card View" width="250"/>
+      <br><b>Card View</b>
+      <br>Immersive, detailed comparison
+    </td>
+    <td align="center">
+      <img src="./screenshots/tableView.png" alt="Table View" width="250"/>
+      <br><b>Table View</b>
+      <br>Structured, analytical format
+    </td>
+    <td align="center">
+      <img src="./screenshots/chartView.png" alt="Chart View" width="250"/>
+      <br><b>Chart View</b>
+      <br>Visual data representation
+    </td>
+  </tr>
+</table>
 
 ## 🏗️ Architecture
 
@@ -158,6 +220,27 @@ the-arbiter/
 
 5. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
+
+![Setup Process](./screenshots/setup-process.png)
+*Quick setup process - from clone to running in minutes*
+
+## 🎮 Usage Guide
+
+### Step 1: Enter Comparison Parameters
+![Usage Step 1](./screenshots/usage-step-1.png)
+*Fill in tech stacks or use sample data for quick testing*
+
+### Step 2: AI Analysis in Progress
+![Usage Step 2](./screenshots/usage-step-2.png)
+*Watch the cyberpunk loading animations while AI processes your request*
+
+### Step 3: Explore Results
+![Usage Step 3](./screenshots/usage-step-3.png)
+*Switch between view modes to analyze the comparison from different angles*
+
+### Step 4: Share Your Findings
+![Usage Step 4](./screenshots/usage-step-4.png)
+*Export as image or share directly to social media platforms*
 
 ## 🔧 Configuration
 
@@ -499,6 +582,35 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Discussions**: [GitHub Discussions](https://github.com/gotoark/the-arbiter/discussions)
 - **Documentation**: [Wiki](https://github.com/gotoark/the-arbiter/wiki)
 
+## 📱 Screenshots Directory Structure
+
+```
+screenshots/
+├── main-interface.png          # Main application interface
+├── comparison-form.png         # Form with sample data
+├── card-view.png              # Card view results
+├── table-view.png             # Table view results  
+├── chart-view.png             # Chart visualizations
+├── loading-animations.gif     # Loading states
+├── share-export.png           # Sharing features
+├── mobile-form.png            # Mobile form view
+├── mobile-results.png         # Mobile results view
+├── card-view-demo.png         # Card view demo
+├── table-view-demo.png        # Table view demo
+├── chart-view-demo.png        # Chart view demo
+├── radar-chart-animation.gif  # Animated radar chart
+├── score-comparison.png       # Score indicators
+├── space-background.gif       # Background animations
+├── button-animations.gif      # Button loading states
+├── setup-process.png          # Installation guide
+├── usage-step-1.png          # Usage guide step 1
+├── usage-step-2.png          # Usage guide step 2
+├── usage-step-3.png          # Usage guide step 3
+└── usage-step-4.png          # Usage guide step 4
+```
+
+*Note: Screenshots will be added once the application is deployed and captured*
+
 ---
 
-**Built with Amazon Kiro • Powered by Groq AI •**
+**Built with Amazon Kiro • Powered by Groq AI • Cyberpunk Referee Protocol v2.0 😊**
