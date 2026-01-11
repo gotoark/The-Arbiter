@@ -40,6 +40,7 @@ https://the-arbiter.vercel.app/
 ### Mobile Responsive Design
 <div align="center">
   <img src="./screenshots/mobileDashboard.png" alt="Mobile Form" width="300"/>
+
   <img src="./screenshots/mobileResults.png" alt="Mobile Results" width="300"/>
 </div>
 
