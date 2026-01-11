@@ -1,0 +1,775 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --neon-cyan: #00ffff;
+  --neon-pink: #ff00ff;
+  --neon-green: #00ff00;
+  --neon-orange: #ff6600;
+  --dark-bg: #0a0a0a;
+  --darker-bg: #050505;
+  --grid-color: #1a1a2e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background: var(--dark-bg);
+  color: var(--neon-cyan);
+  overflow-x: hidden;
+}
+
+/* Cyberpunk grid background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Space Background Animations */
+.moon {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #f0f0f0, #888);
+  box-shadow: 0 0 20px rgba(240, 240, 240, 0.5);
+  opacity: 0.7;
+}
+
+.moon-1 {
+  width: 80px;
+  height: 80px;
+  top: 10%;
+  right: 15%;
+  animation: float 20s ease-in-out infinite;
+}
+
+.moon-2 {
+  width: 60px;
+  height: 60px;
+  top: 60%;
+  left: 10%;
+  animation: float 25s ease-in-out infinite reverse;
+}
+
+.moon-3 {
+  width: 40px;
+  height: 40px;
+  top: 30%;
+  right: 40%;
+  animation: float 30s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-20px) rotate(90deg); }
+  50% { transform: translateY(-10px) rotate(180deg); }
+  75% { transform: translateY(-30px) rotate(270deg); }
+}
+
+/* Shooting stars */
+.shooting-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px white;
+}
+
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, white, transparent);
+  transform-origin: 0 50%;
+}
+
+.shooting-star-1 {
+  top: 20%;
+  left: -100px;
+  animation: shoot 8s linear infinite;
+}
+
+.shooting-star-2 {
+  top: 50%;
+  left: -100px;
+  animation: shoot 12s linear infinite 4s;
+}
+
+.shooting-star-3 {
+  top: 80%;
+  left: -100px;
+  animation: shoot 10s linear infinite 2s;
+}
+
+@keyframes shoot {
+  0% {
+    transform: translateX(0) translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) translateY(-100px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Nebula clouds */
+.nebula {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: drift 60s ease-in-out infinite;
+}
+
+.nebula-1 {
+  width: 300px;
+  height: 200px;
+  top: 20%;
+  left: 70%;
+  background: radial-gradient(ellipse, rgba(138, 43, 226, 0.3), transparent);
+  animation-duration: 80s;
+}
+
+.nebula-2 {
+  width: 250px;
+  height: 150px;
+  bottom: 30%;
+  left: 20%;
+  background: radial-gradient(ellipse, rgba(0, 191, 255, 0.2), transparent);
+  animation-duration: 100s;
+  animation-direction: reverse;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(50px, -30px) scale(1.1); }
+  50% { transform: translate(-30px, 20px) scale(0.9); }
+  75% { transform: translate(20px, -50px) scale(1.05); }
+}
+
+/* Neon glow effects */
+.neon-text {
+  text-shadow: 
+    0 0 2px currentColor,
+    0 0 4px currentColor,
+    0 0 6px currentColor;
+}
+
+.neon-text-title {
+  text-shadow: 
+    0 0 2px currentColor,
+    0 0 4px currentColor,
+    0 0 6px currentColor;
+}
+
+.neon-text-subtle {
+  text-shadow: 
+    0 0 1px currentColor,
+    0 0 2px currentColor,
+    0 0 3px currentColor;
+}
+
+.neon-border {
+  border: 1px solid var(--neon-cyan);
+  box-shadow: 
+    0 0 5px var(--neon-cyan),
+    inset 0 0 5px rgba(0, 255, 255, 0.1);
+}
+
+.neon-button {
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+  background: rgba(0, 255, 255, 0.2);
+  box-shadow: 
+    0 0 10px var(--neon-cyan),
+    inset 0 0 10px rgba(0, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.neon-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cyber-card {
+  background: rgba(10, 10, 10, 0.9);
+  border: 1px solid var(--neon-cyan);
+  box-shadow: 
+    0 0 20px rgba(0, 255, 255, 0.3),
+    inset 0 0 20px rgba(0, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.cyber-input {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.cyber-input:focus {
+  outline: none;
+  box-shadow: 
+    0 0 10px var(--neon-cyan),
+    inset 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.cyber-input::placeholder {
+  color: rgba(0, 255, 255, 0.5);
+}
+
+/* Score bar animations */
+.score-bar {
+  background: linear-gradient(90deg, 
+    var(--neon-green) 0%, 
+    var(--neon-orange) 50%, 
+    var(--neon-pink) 100%);
+  box-shadow: 0 0 10px currentColor;
+}
+
+/* Glitch effect for title */
+.glitch {
+  position: relative;
+  font-family: 'Orbitron', monospace;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.glitch::before {
+  animation: glitch-1 0.5s infinite;
+  color: var(--neon-pink);
+  z-index: -1;
+}
+
+.glitch::after {
+  animation: glitch-2 0.5s infinite;
+  color: var(--neon-green);
+  z-index: -2;
+}
+
+@keyframes glitch-1 {
+  0%, 14%, 15%, 49%, 50%, 99%, 100% {
+    transform: translate(0);
+    opacity: 0;
+  }
+  15%, 49% {
+    transform: translate(-1px, 1px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes glitch-2 {
+  0%, 20%, 21%, 62%, 63%, 99%, 100% {
+    transform: translate(0);
+    opacity: 0;
+  }
+  21%, 62% {
+    transform: translate(1px, -1px);
+    opacity: 0.6;
+  }
+}
+
+/* Scanning line effect */
+.scan-lines::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    transparent 50%,
+    rgba(0, 255, 0, 0.03) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+/* Pulsing animation for planets */
+@keyframes planet-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* Twinkling stars */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Button Loading Animations */
+@keyframes scan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes scan-reverse {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Particle effects for button */
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #00ffff;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #00ffff;
+}
+
+.particle-1 {
+  top: 20%;
+  left: 10%;
+  animation: particle-float 2s ease-in-out infinite;
+}
+
+.particle-2 {
+  top: 30%;
+  right: 15%;
+  animation: particle-float 2.5s ease-in-out infinite reverse;
+}
+
+.particle-3 {
+  bottom: 25%;
+  left: 20%;
+  animation: particle-float 1.8s ease-in-out infinite;
+  background: #ff00ff;
+  box-shadow: 0 0 6px #ff00ff;
+}
+
+.particle-4 {
+  bottom: 35%;
+  right: 25%;
+  animation: particle-float 2.2s ease-in-out infinite reverse;
+  background: #00ff00;
+  box-shadow: 0 0 6px #00ff00;
+}
+
+.particle-5 {
+  top: 50%;
+  left: 50%;
+  animation: particle-orbit 3s linear infinite;
+}
+
+.particle-6 {
+  top: 50%;
+  left: 50%;
+  animation: particle-orbit 3s linear infinite reverse;
+  animation-delay: 1.5s;
+}
+
+@keyframes particle-float {
+  0%, 100% { 
+    transform: translateY(0px) scale(1);
+    opacity: 0.7;
+  }
+  50% { 
+    transform: translateY(-10px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes particle-orbit {
+  0% { 
+    transform: translate(-50%, -50%) rotate(0deg) translateX(30px) rotate(0deg);
+  }
+  100% { 
+    transform: translate(-50%, -50%) rotate(360deg) translateX(30px) rotate(-360deg);
+  }
+}
+
+/* Matrix-style data streams */
+.data-stream {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    transparent, 
+    #00ff00, 
+    #00ff00, 
+    transparent
+  );
+  animation: data-flow 1.5s linear infinite;
+}
+
+.data-stream-1 {
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.data-stream-2 {
+  left: 50%;
+  animation-delay: 0.5s;
+}
+
+.data-stream-3 {
+  left: 80%;
+  animation-delay: 1s;
+}
+
+@keyframes data-flow {
+  0% { 
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% { 
+    opacity: 1;
+  }
+  90% { 
+    opacity: 1;
+  }
+  100% { 
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+/* Loading spinner */
+.loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid #00ffff;
+  border-right: 2px solid #ff00ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Enhanced button hover effects */
+.neon-button:not(:disabled):hover {
+  background: rgba(0, 255, 255, 0.2);
+  box-shadow: 
+    0 0 20px var(--neon-cyan),
+    inset 0 0 20px rgba(0, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.neon-button:not(:disabled):hover::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #00ffff, #ff00ff, #00ff00, #00ffff);
+  border-radius: inherit;
+  z-index: -1;
+  animation: border-glow 2s linear infinite;
+}
+
+@keyframes border-glow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Pulse animation for active state */
+.neon-button:active {
+  transform: scale(0.98);
+  box-shadow: 
+    0 0 30px var(--neon-cyan),
+    inset 0 0 30px rgba(0, 255, 255, 0.3);
+}
+
+/* Space Vehicles */
+.space-shuttle {
+  background: linear-gradient(45deg, #c0c0c0, #808080);
+  border-radius: 50% 10% 50% 10%;
+  position: relative;
+  animation: shuttle-drift 20s ease-in-out infinite;
+  box-shadow: 0 0 10px rgba(192, 192, 192, 0.5);
+}
+
+.space-shuttle::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: -30%;
+  width: 40%;
+  height: 60%;
+  background: linear-gradient(90deg, transparent, #00ffff, transparent);
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: thruster-glow 2s ease-in-out infinite alternate;
+}
+
+.space-shuttle::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: -20%;
+  width: 30%;
+  height: 80%;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  border-radius: 20%;
+  opacity: 0.8;
+}
+
+.space-rocket {
+  background: linear-gradient(180deg, #ff6b6b, #ff4757, #ff3742);
+  border-radius: 50% 50% 10% 10%;
+  position: relative;
+  animation: rocket-drift 25s ease-in-out infinite;
+  box-shadow: 0 0 15px rgba(255, 107, 107, 0.6);
+}
+
+.space-rocket::before {
+  content: '';
+  position: absolute;
+  bottom: -40%;
+  left: 20%;
+  width: 60%;
+  height: 50%;
+  background: linear-gradient(180deg, #ffa502, #ff6348, transparent);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: rocket-flame 1.5s ease-in-out infinite alternate;
+}
+
+.space-rocket::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  width: 40%;
+  height: 20%;
+  background: #ffffff;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+/* Flying vehicles animations */
+.space-shuttle-flying {
+  position: absolute;
+  width: 25px;
+  height: 15px;
+  background: linear-gradient(45deg, #c0c0c0, #808080);
+  border-radius: 50% 10% 50% 10%;
+  box-shadow: 0 0 8px rgba(192, 192, 192, 0.5);
+  opacity: 0.8;
+}
+
+.space-shuttle-flying::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: -25%;
+  width: 30%;
+  height: 60%;
+  background: linear-gradient(90deg, transparent, #00ffff);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: thruster-pulse 1.5s ease-in-out infinite;
+}
+
+.shuttle-fly-1 {
+  animation: fly-across-1 30s linear infinite;
+}
+
+.shuttle-fly-2 {
+  animation: fly-across-2 35s linear infinite 10s;
+}
+
+.space-rocket-flying {
+  position: absolute;
+  width: 20px;
+  height: 12px;
+  background: linear-gradient(180deg, #ff6b6b, #ff4757);
+  border-radius: 50% 50% 10% 10%;
+  box-shadow: 0 0 10px rgba(255, 107, 107, 0.6);
+  opacity: 0.8;
+}
+
+.space-rocket-flying::before {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: 25%;
+  width: 50%;
+  height: 40%;
+  background: linear-gradient(180deg, #ffa502, transparent);
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: rocket-trail 1s ease-in-out infinite alternate;
+}
+
+.rocket-fly-1 {
+  animation: fly-diagonal-1 25s linear infinite;
+}
+
+.rocket-fly-2 {
+  animation: fly-diagonal-2 28s linear infinite 8s;
+}
+
+/* Vehicle movement animations */
+@keyframes shuttle-drift {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% { 
+    transform: translate(20px, -15px) rotate(5deg);
+  }
+  50% { 
+    transform: translate(-10px, 10px) rotate(-3deg);
+  }
+  75% { 
+    transform: translate(15px, -5px) rotate(2deg);
+  }
+}
+
+@keyframes rocket-drift {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% { 
+    transform: translate(-25px, 20px) rotate(-8deg);
+  }
+  66% { 
+    transform: translate(30px, -15px) rotate(6deg);
+  }
+}
+
+@keyframes fly-across-1 {
+  0% { 
+    left: -50px; 
+    top: 20%; 
+    transform: rotate(15deg);
+  }
+  100% { 
+    left: calc(100% + 50px); 
+    top: 25%; 
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes fly-across-2 {
+  0% { 
+    right: -50px; 
+    top: 60%; 
+    transform: rotate(-165deg);
+  }
+  100% { 
+    right: calc(100% + 50px); 
+    top: 55%; 
+    transform: rotate(-165deg);
+  }
+}
+
+@keyframes fly-diagonal-1 {
+  0% { 
+    left: -50px; 
+    bottom: -50px; 
+    transform: rotate(45deg);
+  }
+  100% { 
+    left: calc(100% + 50px); 
+    bottom: calc(100% + 50px); 
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes fly-diagonal-2 {
+  0% { 
+    right: -50px; 
+    top: -50px; 
+    transform: rotate(-135deg);
+  }
+  100% { 
+    right: calc(100% + 50px); 
+    top: calc(100% + 50px); 
+    transform: rotate(-135deg);
+  }
+}
+
+/* Thruster and flame effects */
+@keyframes thruster-glow {
+  0% { 
+    opacity: 0.4;
+    transform: scaleX(0.8);
+  }
+  100% { 
+    opacity: 0.9;
+    transform: scaleX(1.2);
+  }
+}
+
+@keyframes thruster-pulse {
+  0% { 
+    opacity: 0.3;
+    transform: scaleX(0.7);
+  }
+  100% { 
+    opacity: 0.8;
+    transform: scaleX(1.1);
+  }
+}
+
+@keyframes rocket-flame {
+  0% { 
+    opacity: 0.6;
+    transform: scaleY(0.8);
+  }
+  100% { 
+    opacity: 1;
+    transform: scaleY(1.3);
+  }
+}
+
+@keyframes rocket-trail {
+  0% { 
+    opacity: 0.5;
+    transform: scaleY(0.7);
+  }
+  100% { 
+    opacity: 0.9;
+    transform: scaleY(1.2);
+  }
+}
